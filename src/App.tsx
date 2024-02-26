@@ -1,17 +1,14 @@
-import Results from './components/Results/Results'
+import ContentSection from "./components/ContentBox/ContentSection"
+import BtnSection from "./components/ButtonBox/BtnSection"
+import s from './app.module.sass'
 
 function App() {
 
   return (
-    <>
-      <Results />
-      <div className='numbox'>
-
-      </div>
-      <div className='funcbox'>
-
-      </div>
-    </>
+    <div className={s.mainBody}>
+      <ContentSection />
+      <BtnSection />
+    </div>
   )
 }
 

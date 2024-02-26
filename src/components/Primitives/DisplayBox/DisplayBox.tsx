@@ -2,7 +2,9 @@ import s from './display.module.sass'
 
 const DisplayBox = () => {
     return (
-        <div></div>
+        <div className={s.displayBox}>
+            0
+        </div>
     )
 }
 
