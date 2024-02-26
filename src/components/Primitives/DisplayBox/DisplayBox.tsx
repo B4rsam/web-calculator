@@ -1,6 +1,6 @@
 import s from './display.module.sass'
 
-const DisplayBox = () => {
+const DisplayBox = (displayContent : any) => {
     return (
         <div className={s.displayBox}>
             0

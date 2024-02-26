@@ -6,6 +6,7 @@ type rowNumber = 1 | 2 | 3 | 4 | 5;
 interface IRow extends HTMLAttributes<HTMLDivElement> {
     className: string;
     row: rowNumber;
+    handleEquals?: any
 }
 
 const BtnRow : FC<IRow> = ({className, row}) => {
@@ -14,7 +15,7 @@ const BtnRow : FC<IRow> = ({className, row}) => {
         switch(row) {
             case 1:
                 return (
-                    <div >
+                    <div className={`${s.btnRow}`} >
                         <Button type="numbtn" children="7"/>
                         <Button type="numbtn" children="8"/>
                         <Button type="numbtn" children="9"/>
@@ -23,7 +24,7 @@ const BtnRow : FC<IRow> = ({className, row}) => {
                 )
             case 2:
                 return (
-                    <div>
+                    <div className={`${s.btnRow}`}>
                         <Button type="numbtn" children="4"/>
                         <Button type="numbtn" children="5"/>
                         <Button type="numbtn" children="6"/>
@@ -32,7 +33,7 @@ const BtnRow : FC<IRow> = ({className, row}) => {
                 )
             case 3:
                 return (
-                    <div>
+                    <div className={`${s.btnRow}`}>
                         <Button type="numbtn" children="1"/>
                         <Button type="numbtn" children="2"/>
                         <Button type="numbtn" children="3"/>
@@ -41,7 +42,7 @@ const BtnRow : FC<IRow> = ({className, row}) => {
                 )
             case 4:
                 return (
-                    <div>
+                    <div className={`${s.btnRow}`}>
                         <Button type="funcbtn" children="."/>
                         <Button type="numbtn" children="0"/>
                         <Button type="funcbtn" children="/"/>
@@ -50,8 +51,8 @@ const BtnRow : FC<IRow> = ({className, row}) => {
                 )
             case 5:
                 return (
-                    <div>
-                        <Button type="otherbtn" children="RESET" className="resetBtn"/>
+                    <div className={`${s.btnRow} ${s.fifthRow}`}>
+                        <Button type="reset" children="RESET"/>
                         <Button type="equals" children="="/>
                     </div>
                 )
