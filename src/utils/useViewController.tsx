@@ -1,23 +1,69 @@
+import { useState } from "react"
+
 const useViewController = () => {
-    let displayContent = 0
+    const [display, setDisplay] = useState<string>("0")
+    const [operation, setOp] = useState<string>("")
+    const [functionFlag, setFlag] = useState<boolean>(false)
+    let firstInput : string
+    let secondInput : string
 
     const handleEquals = () => {
-        console.log("a")
+        switch(operation) {
+            case "+":
+                setDisplay((Number(firstInput) + Number(secondInput)).toString())
+                break;
+            case "-":
+                setDisplay((Number(firstInput) - Number(secondInput)).toString())
+                break;
+            case "*":
+                setDisplay((Number(firstInput) * Number(secondInput)).toString())
+                break;
+            case "/":
+                setDisplay((Number(firstInput) / Number(secondInput)).toString())
+                break;
+        }
     }
 
     const handleReset = () => {
-        console.log("reset")
+        setDisplay("0")
+        setFlag(false)
+        setOp("")
+        firstInput = secondInput = ""
     }
 
     const handleDelete = () => {
         console.log("del")
     }
 
+    const handleOperation = (sign : string) => {
+        setOp(sign)
+        setFlag(true)
+        setDisplay(display + sign)
+    }
+
+    const handleNumInput = (num : string) => {
+        if (functionFlag === false) {
+            if ( display === "0") {
+                setDisplay(num)
+            }
+            else {
+                setDisplay(display + num)
+            }
+            firstInput = firstInput + num
+        }
+        else {
+            setDisplay(display + num)
+            secondInput = secondInput + num
+        }
+    }
+
     return {
-        displayContent,
+        display,
         handleEquals,
         handleReset,
         handleDelete,
+        handleNumInput,
+        handleOperation,
     }
 }
 
