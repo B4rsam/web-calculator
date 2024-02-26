@@ -18,7 +18,7 @@ const BtnRow : FC<IRow> = ({className, row}) => {
                         <Button type="numbtn" children="7"/>
                         <Button type="numbtn" children="8"/>
                         <Button type="numbtn" children="9"/>
-                        <Button type="funcbtn" children="DEL"/>
+                        <Button type="otherbtn" children="DEL"/>
                     </div>
                 )
             case 2:
@@ -51,8 +51,8 @@ const BtnRow : FC<IRow> = ({className, row}) => {
             case 5:
                 return (
                     <div>
-                        <Button type="otherbtn" children="RESET"/>
-                        <Button type="otherbtn" children="="/>
+                        <Button type="otherbtn" children="RESET" className="resetBtn"/>
+                        <Button type="equals" children="="/>
                     </div>
                 )
         }

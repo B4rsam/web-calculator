@@ -1,7 +1,7 @@
 import { FC, HTMLAttributes, ReactNode } from 'react'
 import s from './button.module.sass'
 
-type btnTypes = "numbtn" | "funcbtn" | "otherbtn";
+type btnTypes = "numbtn" | "funcbtn" | "otherbtn" | "equals";
 interface IButton extends HTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     type: btnTypes
