@@ -44,7 +44,7 @@ const useViewController = () => {
     const handleOperation = (sign : string) => {
         setOp(sign)
         setFlag(true)
-        setDisplay(display + sign)
+        setDisplay(display.concat(sign))
     }
 
     const handleNumInput = (num : string) => {
@@ -67,14 +67,13 @@ const useViewController = () => {
         equals: handleEquals,
         reset: handleReset,
         delete: handleDelete,
-        numInput: handleNumInput,
-        operation: handleOperation
     }
 
     return {
         display,
         functions,
         handleNumInput,
+        handleOperation
     }
 }
 

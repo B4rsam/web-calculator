@@ -8,12 +8,13 @@ function App() {
     display,
     functions,
     handleNumInput,
+    handleOperation,
   } = useViewController()
 
   return (
     <div className={s.mainBody}>
       <ContentSection displayContent={display}/>
-      <BtnSection functions={functions} handleNumInput={handleNumInput} />
+      <BtnSection functions={functions} handleNumInput={handleNumInput} handleOperation={handleOperation}/>
     </div>
   )
 }

@@ -6,13 +6,14 @@ type rowNumber = 1 | 2 | 3 | 4 | 5;
 interface IRow extends HTMLAttributes<HTMLDivElement> {
     className: string;
     row: rowNumber;
-    handleEquals?: any;
-    handleReset?: any;
-    handleDelete?: any;
-    handleNumInput: any;
+    handleEquals?: () => void;
+    handleReset?: () => void;
+    handleDelete?: () => void;
+    handleNumInput: (num: string) => void;
+    handleOperation: (sign: string) => void;
 }
 
-const BtnRow : FC<IRow> = ({className, row, handleEquals, handleReset, handleDelete, handleNumInput}) => {
+const BtnRow : FC<IRow> = ({className, row, handleEquals, handleReset, handleDelete, handleNumInput, handleOperation}) => {
 
     const handleRows = () => {
         switch(row) {
@@ -31,7 +32,7 @@ const BtnRow : FC<IRow> = ({className, row, handleEquals, handleReset, handleDel
                         <Button type="numbtn" children="4" onClick={() => handleNumInput("4")}/>
                         <Button type="numbtn" children="5" onClick={() => handleNumInput("5")}/>
                         <Button type="numbtn" children="6" onClick={() => handleNumInput("6")}/>
-                        <Button type="funcbtn" children="+"/>
+                        <Button type="funcbtn" children="+" onClick={() => handleOperation("+")}/>
                     </div>
                 )
             case 3:
@@ -40,7 +41,7 @@ const BtnRow : FC<IRow> = ({className, row, handleEquals, handleReset, handleDel
                         <Button type="numbtn" children="1" onClick={() => handleNumInput("1")}/>
                         <Button type="numbtn" children="2" onClick={() => handleNumInput("2")}/>
                         <Button type="numbtn" children="3" onClick={() => handleNumInput("3")}/>
-                        <Button type="funcbtn" children="-"/>
+                        <Button type="funcbtn" children="-" onClick={() => handleOperation("-")}/>
                     </div>
                 )
             case 4:
@@ -48,8 +49,8 @@ const BtnRow : FC<IRow> = ({className, row, handleEquals, handleReset, handleDel
                     <div className={`${s.btnRow}`}>
                         <Button type="funcbtn" children="."/>
                         <Button type="numbtn" children="0"  onClick={() => handleNumInput("0")}/>
-                        <Button type="funcbtn" children="/"/>
-                        <Button type="funcbtn" children="X"/>
+                        <Button type="funcbtn" children="/" onClick={() => handleOperation("/")}/>
+                        <Button type="funcbtn" children="X" onClick={() => handleOperation("*")}/>
                     </div>
                 )
             case 5:
