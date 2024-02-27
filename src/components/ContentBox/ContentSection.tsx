@@ -7,7 +7,7 @@ const ContentSection = (displayContent : any) => {
         <div className={s.contentSection}>
             <div className={s.headerSection}>
                 <p className={s.title}>Web Calculator</p>
-                <Button type="funcbtn" children="Dummy"/>
+                <Button type="funcbtn" children="WiP"/>
             </div>
             <DisplayBox displayContent={displayContent}/>
         </div>

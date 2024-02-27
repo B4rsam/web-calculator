@@ -22,6 +22,7 @@
     &.otherbtn
         background-color: $keyBackground
         color: $white
+        font-size: 1.8rem
 
     &.equals
         background-color: $red
@@ -35,7 +36,7 @@
 
     @include mobile
         height: 8vh !important
-        width: 18vw
+        width: 17.5vw
         margin-inline: 1vw
 
         &.reset
@@ -43,6 +44,9 @@
 
         &.equals
             width: 38vw !important
+
+    @include fold
+        font-size: 1rem !important
 
 
 
