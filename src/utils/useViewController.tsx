@@ -1,4 +1,5 @@
 import { useState } from "react"
+import stringMath from "string-math"
 
 const useViewController = () => {
     const [display, setDisplay] = useState<string>("0")
@@ -8,22 +9,23 @@ const useViewController = () => {
     let secondInput : string
 
     const handleEquals = () => {
-        switch(operation) {
-            case "+":
-                setDisplay((Number(firstInput) + Number(secondInput)).toString())
-                break;
-            case "-":
-                setDisplay((Number(firstInput) - Number(secondInput)).toString())
-                break;
-            case "*":
-                setDisplay((Number(firstInput) * Number(secondInput)).toString())
-                break;
-            case "/":
-                setDisplay((Number(firstInput) / Number(secondInput)).toString())
-                break;
-            default:
-                break;
-        }
+        // switch(operation) {
+        //     case "+":
+        //         setDisplay((Number(firstInput) + Number(secondInput)).toString())
+        //         break;
+        //     case "-":
+        //         setDisplay((Number(firstInput) - Number(secondInput)).toString())
+        //         break;
+        //     case "*":
+        //         setDisplay((Number(firstInput) * Number(secondInput)).toString())
+        //         break;
+        //     case "/":
+        //         setDisplay((Number(firstInput) / Number(secondInput)).toString())
+        //         break;
+        //     default:
+        //         break;
+        // }
+        setDisplay(stringMath(display))
         console.log(firstInput)
         console.log(secondInput)
         console.log(display)
