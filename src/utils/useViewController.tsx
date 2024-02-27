@@ -22,6 +22,10 @@ const useViewController = () => {
                 setDisplay((Number(firstInput) / Number(secondInput)).toString())
                 break;
         }
+        console.log(firstInput)
+        console.log(secondInput)
+        console.log(display)
+        console.log(operation)
     }
 
     const handleReset = () => {

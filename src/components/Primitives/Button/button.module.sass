@@ -1,4 +1,5 @@
 @import '../../../assets/palette'
+@import '../../../utils/mediaQuery'
 
 .button
     appearance: none
@@ -31,5 +32,18 @@
         background-color: $keyBackground
         color: $white
         width: 176px !important
+
+    @include mobile
+        height: 8vh !important
+        width: 18vw
+        margin-inline: 1vw
+
+        &.reset
+            width: 38vw !important
+
+        &.equals
+            width: 38vw !important
+
+
 
     
