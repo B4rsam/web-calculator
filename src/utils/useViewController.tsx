@@ -21,6 +21,8 @@ const useViewController = () => {
             case "/":
                 setDisplay((Number(firstInput) / Number(secondInput)).toString())
                 break;
+            default:
+                break;
         }
         console.log(firstInput)
         console.log(secondInput)

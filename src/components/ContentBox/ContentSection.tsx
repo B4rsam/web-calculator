@@ -1,8 +1,12 @@
 import s from './contentsection.module.sass'
 import DisplayBox from '../Primitives/DisplayBox/DisplayBox'
 import Button from '../Primitives/Button/Button'
+import { FC } from 'react'
 
-const ContentSection = (displayContent : any) => {
+interface IContent {
+    displayContent: string
+}
+const ContentSection : FC<IContent> = ({displayContent}) => {
     return (
         <div className={s.contentSection}>
             <div className={s.headerSection}>

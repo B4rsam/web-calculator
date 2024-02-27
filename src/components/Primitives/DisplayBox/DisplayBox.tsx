@@ -1,9 +1,14 @@
+import { FC } from 'react'
 import s from './display.module.sass'
 
-const DisplayBox = (displayContent : any) => {
+interface IDisplayProps {
+    displayContent: string
+}
+const DisplayBox : FC<IDisplayProps> = ({displayContent}) => {
+
     return (
         <div className={s.displayBox}>
-           0
+           {displayContent}
         </div>
     )
 }
