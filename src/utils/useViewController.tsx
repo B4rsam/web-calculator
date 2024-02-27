@@ -74,6 +74,7 @@ const useViewController = () => {
     return {
         display,
         functions,
+        handleNumInput,
     }
 }
 

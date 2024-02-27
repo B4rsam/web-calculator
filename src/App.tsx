@@ -7,12 +7,13 @@ function App() {
   const {
     display,
     functions,
+    handleNumInput,
   } = useViewController()
 
   return (
     <div className={s.mainBody}>
       <ContentSection displayContent={display}/>
-      <BtnSection functions={functions} />
+      <BtnSection functions={functions} handleNumInput={handleNumInput} />
     </div>
   )
 }
