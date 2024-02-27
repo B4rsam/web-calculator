@@ -63,13 +63,17 @@ const useViewController = () => {
         }
     }
 
+    const functions = {
+        equals: handleEquals,
+        reset: handleReset,
+        delete: handleDelete,
+        numInput: handleNumInput,
+        operation: handleOperation
+    }
+
     return {
         display,
-        handleEquals,
-        handleReset,
-        handleDelete,
-        handleNumInput,
-        handleOperation,
+        functions,
     }
 }
 

@@ -6,16 +6,13 @@ import useViewController from "./utils/useViewController"
 function App() {
   const {
     display,
-    handleEquals,
-    handleReset,
-    handleDelete,
-    handleNumInput,
+    functions,
   } = useViewController()
 
   return (
     <div className={s.mainBody}>
       <ContentSection displayContent={display}/>
-      <BtnSection handleEquals={handleEquals} handleReset={handleReset} handleDelete={handleDelete} handleNumInput={handleNumInput}/>
+      <BtnSection functions={functions} />
     </div>
   )
 }
