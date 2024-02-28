@@ -40,7 +40,12 @@ const useViewController = () => {
     }
 
     const handleDelete = () => {
-        console.log("del")
+        if (display.length === 1) {
+            setDisplay("0") 
+        }
+        else {
+            setDisplay(display.slice(0, -1)) 
+        }
     }
 
     const handleOperation = (sign : string) => {
