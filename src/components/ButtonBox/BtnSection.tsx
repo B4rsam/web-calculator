@@ -2,8 +2,13 @@ import s from './btnsection.module.sass'
 import BtnRow from '../Primitives/BtnRows/BtnRows'
 import { FC, HTMLAttributes } from 'react'
 
+interface functionList {
+    delete: () => void
+    equals: () => void
+    reset: () => void
+}
 interface IBtnSection extends HTMLAttributes<HTMLDivElement> {
-    functions: object
+    functions: functionList
     handleNumInput: (num: string) => void
     handleOperation: (sign: string) => void
 }

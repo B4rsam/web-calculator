@@ -47,7 +47,7 @@ const BtnRow : FC<IRow> = ({className, row, handleEquals, handleReset, handleDel
             case 4:
                 return (
                     <div className={`${s.btnRow}`}>
-                        <Button type="funcbtn" children="."/>
+                        <Button type="funcbtn" children="." onClick={() => handleOperation(".")}/>
                         <Button type="numbtn" children="0"  onClick={() => handleNumInput("0")}/>
                         <Button type="funcbtn" children="/" onClick={() => handleOperation("/")}/>
                         <Button type="funcbtn" children="X" onClick={() => handleOperation("*")}/>

@@ -3,40 +3,18 @@ import stringMath from "string-math"
 
 const useViewController = () => {
     const [display, setDisplay] = useState<string>("0")
-    const [operation, setOp] = useState<string>("")
-    const [functionFlag, setFlag] = useState<boolean>(false)
-    let firstInput : string
-    let secondInput : string
 
     const handleEquals = () => {
-        // switch(operation) {
-        //     case "+":
-        //         setDisplay((Number(firstInput) + Number(secondInput)).toString())
-        //         break;
-        //     case "-":
-        //         setDisplay((Number(firstInput) - Number(secondInput)).toString())
-        //         break;
-        //     case "*":
-        //         setDisplay((Number(firstInput) * Number(secondInput)).toString())
-        //         break;
-        //     case "/":
-        //         setDisplay((Number(firstInput) / Number(secondInput)).toString())
-        //         break;
-        //     default:
-        //         break;
-        // }
-        setDisplay(stringMath(display))
-        console.log(firstInput)
-        console.log(secondInput)
-        console.log(display)
-        console.log(operation)
+        try {
+            setDisplay(stringMath(display))
+        }
+        catch {
+            setDisplay("Error")
+        }
     }
 
     const handleReset = () => {
         setDisplay("0")
-        setFlag(false)
-        setOp("")
-        firstInput = secondInput = ""
     }
 
     const handleDelete = () => {
@@ -49,24 +27,20 @@ const useViewController = () => {
     }
 
     const handleOperation = (sign : string) => {
-        setOp(sign)
-        setFlag(true)
-        setDisplay(display.concat(sign))
+        if (sign != display[display.length - 1]) {
+            setDisplay(display.concat(sign))
+        }
+        if (sign === "." && isNaN(Number(display[display.length]))) {
+            setDisplay(display.concat("0."))
+        }
     }
 
     const handleNumInput = (num : string) => {
-        if (functionFlag === false) {
-            if ( display === "0") {
-                setDisplay(num)
-            }
-            else {
-                setDisplay(display + num)
-            }
-            firstInput = firstInput + num
+        if (display === "0") {
+            setDisplay(num)
         }
         else {
             setDisplay(display + num)
-            secondInput = secondInput + num
         }
     }
 
