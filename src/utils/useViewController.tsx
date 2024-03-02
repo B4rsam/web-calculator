@@ -6,7 +6,7 @@ type validThemes = 1 | 2 | 3;
 const useViewController = () => {
     const [display, setDisplay] = useState<string>("0")
     const [error, setError] = useState<boolean>(false)
-    const [theme, setTheme] = useState<validThemes>(1)
+    const [theme, setTheme] = useState<string>("theme1")
 
     const handleEquals = () => {
         try {
@@ -57,7 +57,17 @@ const useViewController = () => {
     }
 
     const themeChange = (themeNumber : validThemes) => {
-        setTheme(themeNumber)
+        switch(themeNumber) {
+            case 1:
+                setTheme("theme1")
+                break;
+            case 2:
+                setTheme("theme2")
+                break;
+            case 3:
+                setTheme("theme3")
+                break;
+        }
     }
 
     const functions = {

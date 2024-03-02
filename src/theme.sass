@@ -1,0 +1,107 @@
+@import './assets/palette'
+
+.mainBackground
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    margin: 0
+    padding: 0
+
+    &.theme1
+        background-color: $mainBackground
+
+        .mainBody
+            .contentSection
+                background-color: $mainBackground
+                .displayBox
+                    background-color: $pageBackground
+                    color: $white
+            .btnBox
+                background-color: $keypadBackground
+                .btnRow
+                    .button
+                        &.numbtn
+                            background-color: $white
+
+                        &.funcbtn
+                            background-color: $white
+
+                        &.otherbtn
+                            background-color: $keyBackground
+                            color: $white
+
+                        &.equals
+                            background-color: $red
+                            color: $white 
+                        
+                        &.reset
+                            background-color: $keyBackground
+                            color: $white
+    
+
+    &.theme2
+        background-color: $mainBackground2
+
+        .mainBody
+            .contentSection
+                background-color: $mainBackground2
+                .displayBox
+                    background-color: $pageBackground2
+                    color: $white
+            .btnBox
+                background-color: $keypadBackground2
+                .btnRow
+                    .button
+                        &.numbtn
+                            background-color: $white
+
+                        &.funcbtn
+                            background-color: $white
+
+                        &.otherbtn
+                            background-color: $keyBackground2
+                            color: $white
+
+                        &.equals
+                            background-color: $orange2
+                            color: $white 
+                        
+                        &.reset
+                            background-color: $keyBackground2
+                            color: $white
+
+    &.theme3
+        background-color: $mainBackground3
+
+        .mainBody
+            .contentSection
+                background-color: $mainBackground3
+                .displayBox
+                    background-color: $pageBackground3
+                    color: $white
+            .btnBox
+                background-color: $keypadBackground3
+                .btnRow
+                    .button
+                        &.numbtn
+                            background-color: $white
+
+                        &.funcbtn
+                            background-color: $white
+
+                        &.otherbtn
+                            background-color: $keyBackground3
+                            color: $white
+
+                        &.equals
+                            background-color: $cyan3
+                            color: $white 
+                        
+                        &.reset
+                            background-color: $keyBackground3
+                            color: $white
+

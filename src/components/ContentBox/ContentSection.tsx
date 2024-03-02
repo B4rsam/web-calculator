@@ -3,10 +3,12 @@ import DisplayBox from '../Primitives/DisplayBox/DisplayBox'
 import Button from '../Primitives/Button/Button'
 import { FC } from 'react'
 
+type validThemes = 1 | 2 | 3
 interface IContent {
     displayContent: string
+    themeChange: (theme : validThemes) => void
 }
-const ContentSection : FC<IContent> = ({displayContent}) => {
+const ContentSection : FC<IContent> = ({displayContent, themeChange}) => {
     return (
         <div className={s.contentSection}>
             <div className={s.headerSection}>
