@@ -1,13 +1,16 @@
 import { useState } from "react"
 import stringMath from "string-math"
 
+type validThemes = 1 | 2 | 3;
+
 const useViewController = () => {
     const [display, setDisplay] = useState<string>("0")
     const [error, setError] = useState<boolean>(false)
+    const [theme, setTheme] = useState<validThemes>(1)
 
     const handleEquals = () => {
         try {
-            setDisplay(stringMath(display))
+            setDisplay(stringMath(display).toString())
         }
         catch {
             setDisplay("Error")
@@ -53,6 +56,10 @@ const useViewController = () => {
         }
     }
 
+    const themeChange = (themeNumber : validThemes) => {
+        setTheme(themeNumber)
+    }
+
     const functions = {
         equals: handleEquals,
         reset: handleReset,
@@ -62,6 +69,8 @@ const useViewController = () => {
     return {
         display,
         functions,
+        theme,
+        themeChange,
         handleNumInput,
         handleOperation
     }
