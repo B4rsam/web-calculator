@@ -35,23 +35,27 @@ const useViewController = () => {
 
     const handleOperation = (sign : string) => {
         if (error === false) {
-            if (sign != display[display.length - 1]) {
-                setDisplay(display.concat(sign))
+            if (display.length < 10) {
+                if (sign != display[display.length - 1]) {
+                    setDisplay(display.concat(sign))
+                }
+                if (sign === "." && isNaN(Number(display[display.length]))) {
+                    setDisplay(display.concat("0."))
+                }     
             }
-            if (sign === "." && isNaN(Number(display[display.length]))) {
-                setDisplay(display.concat("0."))
-            }   
         }
     }
 
     const handleNumInput = (num : string) => {
         if (error === false) {
-            if (display === "0") {
-                setDisplay(num)
+            if (display.length < 10) {
+                if (display === "0") {
+                    setDisplay(num)
+                }
+                else {
+                    setDisplay(display + num)
+                }       
             }
-            else {
-                setDisplay(display + num)
-            }    
         }
     }
 
