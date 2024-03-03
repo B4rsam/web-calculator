@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import stringMath from "string-math"
 
 
@@ -74,6 +74,20 @@ const useViewController = () => {
         reset: handleReset,
         delete: handleDelete,
     }
+
+    useEffect(() => {
+        function handleKeyPress(e : any) {
+            if (!isNaN(parseInt(e.key, 10))) {
+                handleNumInput(e.key)
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyPress)
+
+        return function cleanUp() {
+            document.removeEventListener('keydown', handleKeyPress)
+        }
+    })
 
     return {
         display,
