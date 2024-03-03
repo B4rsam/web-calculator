@@ -80,9 +80,28 @@ const useViewController = () => {
     }
 
     useEffect(() => {
+        const regex = /[+-/*.=]/
         function handleKeyPress(e : any) {
-            if (!isNaN(parseInt(e.key, 10))) {
-                handleNumInput(e.key)
+            switch(e.keyCode) {
+                case 13:
+                    handleEquals()
+                    break;
+                case 8:
+                    handleDelete()
+                    break;
+                default:
+                    if (!isNaN(parseInt(e.key, 10))) {
+                        handleNumInput(e.key)
+                    }
+                    if (regex.test(e.key)) {
+                        if (e.key === "=") {
+                            handleEquals()
+                        }
+                        else {
+                            handleOperation(e.key)
+                        }
+                    }
+                    break;
             }
         }
 
