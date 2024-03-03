@@ -39,7 +39,7 @@ const useViewController = () => {
                 if (sign != display[display.length - 1]) {
                     setDisplay(display.concat(sign))
                 }
-                if (sign === "." && isNaN(parseInt(display[display.length - 1], 10))) {
+                if (sign === "." && isNaN(parseInt(display[display.length - 1], 10)) && display[display.length - 1] != "." ) {
                     setDisplay(display.concat("0."))
                 }     
             }
