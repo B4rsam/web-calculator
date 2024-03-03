@@ -5,7 +5,7 @@ import stringMath from "string-math"
 const useViewController = () => {
     const [display, setDisplay] = useState<string>("0")
     const [error, setError] = useState<boolean>(false)
-    const [theme, setTheme] = useState<string>("theme2")
+    const [theme, setTheme] = useState<string>("theme1")
 
     const handleEquals = () => {
         try {
@@ -39,7 +39,7 @@ const useViewController = () => {
                 if (sign != display[display.length - 1]) {
                     setDisplay(display.concat(sign))
                 }
-                if (sign === "." && isNaN(Number(display[display.length]))) {
+                if (sign === "." && isNaN(parseInt(display[display.length - 1], 10))) {
                     setDisplay(display.concat("0."))
                 }     
             }
