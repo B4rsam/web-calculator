@@ -1,10 +1,7 @@
 @import './assets/palette'
 
 .mainBackground
-    
-
     &.theme1
-
         --mainBackground: #{$mainBackground}
         --pageBackground: #{$pageBackground}
         --keypadBackground: #{$keypadBackground}
@@ -12,95 +9,22 @@
         --redColor: #{$red}
         --textColor: #{$white}
         --btnBackground: #{$white}
-
-        .mainBody
-            .contentSection
-                background-color: $mainBackground
-                .displayBox
-                    background-color: $pageBackground
-                    color: $white
-            .btnBox
-                background-color: $keypadBackground
-                .btnRow
-                    .button
-                        &.numbtn
-                            background-color: $white
-
-                        &.funcbtn
-                            background-color: $white
-
-                        &.otherbtn
-                            background-color: $keyBackground
-                            color: $white
-
-                        &.equals
-                            background-color: $red
-                            color: $white 
-                        
-                        &.reset
-                            background-color: $keyBackground
-                            color: $white
     
-
     &.theme2
-        background-color: $mainBackground2
-
-        .mainBody
-            .contentSection
-                background-color: $mainBackground2
-                .displayBox
-                    background-color: $pageBackground2
-                    color: $white
-            .btnBox
-                background-color: $keypadBackground2
-                .btnRow
-                    .button
-                        &.numbtn
-                            background-color: $white
-
-                        &.funcbtn
-                            background-color: $white
-
-                        &.otherbtn
-                            background-color: $keyBackground2
-                            color: $white
-
-                        &.equals
-                            background-color: $orange2
-                            color: $white 
-                        
-                        &.reset
-                            background-color: $keyBackground2
-                            color: $white
+        --mainBackground: #{$mainBackground2}
+        --pageBackground: #{$pageBackground2}
+        --keypadBackground: #{$keypadBackground2}
+        --keyBackground: #{$keyBackground2}
+        --redColor: #{$orange2}
+        --textColor: #{$white}
+        --btnBackground: #{$white}
 
     &.theme3
-        background-color: $mainBackground3
-
-        .mainBody
-            .contentSection
-                background-color: $mainBackground3
-                .displayBox
-                    background-color: $pageBackground3
-                    color: $white
-            .btnBox
-                background-color: $keypadBackground3
-                .btnRow
-                    .button
-                        &.numbtn
-                            background-color: $white
-
-                        &.funcbtn
-                            background-color: $white
-
-                        &.otherbtn
-                            background-color: $keyBackground3
-                            color: $white
-
-                        &.equals
-                            background-color: $cyan3
-                            color: $white 
-                        
-                        &.reset
-                            background-color: $keyBackground3
-                            color: $white
+        --mainBackground: #{$mainBackground3}
+        --pageBackground: #{$pageBackground3}
+        --keypadBackground: #{$keypadBackground3}
+        --keyBackground: #{$keyBackground3}
+        --redColor: #{$cyan3}
+        --textColor: #{$white}
+        --btnBackground: #{$white}
 
