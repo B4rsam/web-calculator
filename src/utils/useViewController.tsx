@@ -5,7 +5,7 @@ import stringMath from "string-math"
 const useViewController = () => {
     const [display, setDisplay] = useState<string>("0")
     const [error, setError] = useState<boolean>(false)
-    const [theme, setTheme] = useState<string>("theme1")
+    const [theme, setTheme] = useState<string>("theme2")
 
     const handleEquals = () => {
         try {
