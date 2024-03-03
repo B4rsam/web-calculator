@@ -1,7 +1,6 @@
 import { useState } from "react"
 import stringMath from "string-math"
 
-type validThemes = 1 | 2 | 3;
 
 const useViewController = () => {
     const [display, setDisplay] = useState<string>("0")
@@ -56,15 +55,15 @@ const useViewController = () => {
         }
     }
 
-    const themeChange = (themeNumber : validThemes) => {
-        switch(themeNumber) {
-            case 1:
+    const themeChange = () => {
+        switch(theme) {
+            case "theme3":
                 setTheme("theme1")
                 break;
-            case 2:
+            case "theme1":
                 setTheme("theme2")
                 break;
-            case 3:
+            case "theme2":
                 setTheme("theme3")
                 break;
         }

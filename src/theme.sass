@@ -1,6 +1,9 @@
 @import './assets/palette'
+@import './utils/mediaQuery'
 
 .mainBackground
+    min-height: 100vh
+    height: 100vh
     &.theme1
         --mainBackground: #{$mainBackground}
         --pageBackground: #{$pageBackground}
@@ -11,6 +14,8 @@
         --btnBackground: #{$white}
         --otherBtnColor: #{$white}
         --displayColor: #{$white}
+        --titleColor: #{$white}
+        background-color: $mainBackground
     
     &.theme2
         --mainBackground: #{$mainBackground2}
@@ -22,6 +27,8 @@
         --btnBackground: #{$white}
         --otherBtnColor: #{$white}
         --displayColor: black
+        --titleColor: black
+        background-color: $mainBackground2
 
     &.theme3
         --mainBackground: #{$mainBackground3}
@@ -33,4 +40,6 @@
         --btnBackground: #{$keyBackground3}
         --otherBtnColor: #{$white}
         --displayColor: #{$text3}
+        --titleColor: #{$text3}
+        background-color: $mainBackground3
 
