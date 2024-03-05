@@ -33,28 +33,24 @@ const useViewController = () => {
     }
 
     const handleOperation = (sign : string) => {
-        if (error === false) {
-            if (display.length < 10) {
-                if (sign != display[display.length - 1]) {
-                    setDisplay(display.concat(sign))
-                }
-                if (sign === "." && isNaN(parseInt(display[display.length - 1], 10)) && display[display.length - 1] != "." ) {
-                    setDisplay(display.concat("0."))
-                }     
+        if (error === false && display.length < 10) {
+            if (sign != display[display.length - 1]) {
+                setDisplay(display.concat(sign))
             }
+            if (sign === "." && isNaN(parseInt(display[display.length - 1], 10)) && display[display.length - 1] != "." ) {
+                setDisplay(display.concat("0."))
+            }     
         }
     }
 
     const handleNumInput = (num : string) => {
-        if (error === false) {
-            if (display.length < 10) {
-                if (display === "0") {
-                    setDisplay(num)
-                }
-                else {
-                    setDisplay(display + num)
-                }       
+        if (error === false && display.length < 10) {
+            if (display === "0") {
+                setDisplay(num)
             }
+            else {
+                setDisplay(display + num)
+            }       
         }
     }
 
@@ -88,6 +84,9 @@ const useViewController = () => {
                     break;
                 case 8:
                     handleDelete()
+                    break;
+                case 82:
+                    handleReset()
                     break;
                 default:
                     if (!isNaN(parseInt(e.key, 10))) {
