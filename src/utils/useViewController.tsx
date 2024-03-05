@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import stringMath from "string-math"
 
-
 const useViewController = () => {
     const [display, setDisplay] = useState<string>("0")
     const [error, setError] = useState<boolean>(false)
@@ -80,7 +79,8 @@ const useViewController = () => {
     }
 
     useEffect(() => {
-        const regex = /[+-/*.=]/
+        const regex = /[+\-/*.=]/
+
         function handleKeyPress(e : any) {
             switch(e.keyCode) {
                 case 13:
@@ -93,7 +93,7 @@ const useViewController = () => {
                     if (!isNaN(parseInt(e.key, 10))) {
                         handleNumInput(e.key)
                     }
-                    if (regex.test(e.key)) {
+                    else if (regex.test(e.key)) {
                         if (e.key === "=") {
                             handleEquals()
                         }
