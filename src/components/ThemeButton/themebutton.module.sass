@@ -13,6 +13,7 @@
         border: none
         background-color: rgba(0,0,0,0)
         &:hover
+
             cursor: pointer
 
     .innerLabel
@@ -23,6 +24,11 @@
         left: 2px
         border-radius: 100%
         background-color: var(--redColor)
+
+        &[data-toggle-state="2"]
+            transform: translateX(25px)
+        &[data-toggle-state="3"]
+            transform: translateX(50px)
 
     @include mobile
         width: 17.5vw !important
