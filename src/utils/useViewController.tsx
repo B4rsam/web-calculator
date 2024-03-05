@@ -30,6 +30,9 @@ const useViewController = () => {
                 setDisplay(display.slice(0, -1)) 
             }    
         }
+        else {
+            handleReset()
+        }
     }
 
     const handleOperation = (sign : string) => {
