@@ -8,7 +8,7 @@ const useViewController = () => {
 
     const handleEquals = () => {
         try {
-            setDisplay(stringMath(display).toString())
+            setDisplay(String(stringMath(display)))
         }
         catch {
             setDisplay("Error")
@@ -37,6 +37,7 @@ const useViewController = () => {
 
     const handleOperation = (sign : string) => {
         if (error === false && display.length < 10) {
+
             if (sign != display[display.length - 1]) {
                 setDisplay(display.concat(sign))
             }

@@ -13,7 +13,7 @@ interface IRow extends HTMLAttributes<HTMLDivElement> {
     handleOperation: (sign: string) => void;
 }
 
-const BtnRow : FC<IRow> = ({className, row, handleEquals, handleReset, handleDelete, handleNumInput, handleOperation}) => {
+const BtnRow : FC<IRow> = ({row, handleEquals, handleReset, handleDelete, handleNumInput, handleOperation}) => {
 
     const handleRows = () => {
         switch(row) {
