@@ -5,6 +5,7 @@ const useViewController = () => {
     const [display, setDisplay] = useState<string>("0")
     const [error, setError] = useState<boolean>(false)
     const [theme, setTheme] = useState<string>("theme1")
+    const regexSign = /[+\-/*.=]/
 
     const handleEquals = () => {
         try {
@@ -37,13 +38,22 @@ const useViewController = () => {
 
     const handleOperation = (sign : string) => {
         if (error === false && display.length < 10) {
-
-            if (sign != display[display.length - 1]) {
-                setDisplay(display.concat(sign))
+            if (!regexSign.test(display[display.length-1])) {
+                if (display === "0" && sign === "-") {
+                    setDisplay("-")
+                }
+                else {
+                    setDisplay(display.concat(sign))
+                }
             }
-            if (sign === "." && isNaN(parseInt(display[display.length - 1], 10)) && display[display.length - 1] != "." ) {
-                setDisplay(display.concat("0."))
-            }     
+            else if (regexSign.test(display[display.length-1])) {
+                if (sign == "." && display[display.length-1] != ".") {
+                    setDisplay(display.concat("0."))
+                }
+                else if (sign == "-" && display[display.length-1] != ".") {
+                    setDisplay(display.concat(sign))
+                }
+            }
         }
     }
 
@@ -79,8 +89,6 @@ const useViewController = () => {
     }
 
     useEffect(() => {
-        const regex = /[+\-/*.=]/
-
         function handleKeyPress(e : any) {
             switch(e.keyCode) {
                 case 13:
@@ -96,7 +104,7 @@ const useViewController = () => {
                     if (!isNaN(parseInt(e.key, 10))) {
                         handleNumInput(e.key)
                     }
-                    else if (regex.test(e.key)) {
+                    else if (regexSign.test(e.key)) {
                         if (e.key === "=") {
                             handleEquals()
                         }
