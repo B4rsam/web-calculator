@@ -37,7 +37,7 @@ const useViewController = () => {
     }
 
     const handleOperation = (sign : string) => {
-        if (error === false && display.length < 10) {
+        if (error === false && display.length < 11) {
             if (!regexSign.test(display[display.length-1])) {
                 if (display === "0" && sign === "-") {
                     setDisplay("-")
@@ -58,7 +58,7 @@ const useViewController = () => {
     }
 
     const handleNumInput = (num : string) => {
-        if (error === false && display.length < 10) {
+        if (error === false && display.length < 11) {
             if (display === "0") {
                 setDisplay(num)
             }
