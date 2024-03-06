@@ -9,7 +9,7 @@ const useViewController = () => {
 
     const handleEquals = () => {
         try {
-            setDisplay(String(stringMath(display)))
+            setDisplay(String(Number(stringMath(display))).slice(0,11))
         }
         catch {
             setDisplay("Error")
